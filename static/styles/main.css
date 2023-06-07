@@ -60,6 +60,12 @@ form input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+form input[type="color"] {
+    display: block;
+    width: 20%;
+    margin-bottom: 20px;
+}
+
 select {
     width: 30%;
     padding: 10px;
