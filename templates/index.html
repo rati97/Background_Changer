@@ -16,6 +16,12 @@ Home
     <label for="background">Select new background:</label><br>
     <input type="file" id="background" name="background" accept="image/*"><br>
 
+    <label for="resize-option">Choose which to resize:</label><br>
+    <select id="resize-option" name="resize_option">
+        <option value="background">Background</option>
+        <option value="selfie">Selfie</option>
+    </select><br>
+
     <input type="submit" value="Change Background">
 </form>
 {% endblock %}
