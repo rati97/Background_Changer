@@ -72,6 +72,7 @@ form .background-selection {
     justify-content: flex-start;
 }
 
+/* Styles for the dropdown options */
 select {
     width: 30%;
     padding: 10px;
@@ -86,11 +87,20 @@ select:focus {
     border-color: #4caf50;
 }
 
-/* Styles for the dropdown options */
 select option {
     padding: 10px;
 }
 
+/* style for result image */
+#result-image {
+    max-width: 100%;  
+    height: auto; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);  
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* styles for footer */
 footer {
     background-color: #333;
     text-align: center;

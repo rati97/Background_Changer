@@ -9,7 +9,7 @@ Home
 
 <p>Select a selfie and a new background to start.</p>
 
-<form action="/change-background" method="post" enctype="multipart/form-data">
+<form id="change-background-form" enctype="multipart/form-data">
     <label for="selfie">Select selfie:</label><br>
     <input type="file" id="selfie" name="selfie" accept="image/*" onchange="loadImage(event, 'selfie-preview')"><br>
     <img id="selfie-preview" style="max-width: 400px; max-height: 200px;"><br>
@@ -31,5 +31,7 @@ Home
     </select><br>
 
     <input type="submit" value="Change Background">
+    <div class="submit-url" id="{{ url_for('change_background') }}" style="display:none"></div>
+    <img id="result-image" src="" alt="Result image" style="display:none">
 </form>
 {% endblock %}
