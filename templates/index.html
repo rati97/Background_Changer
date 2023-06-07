@@ -14,12 +14,15 @@ Home
     <input type="file" id="selfie" name="selfie" accept="image/*" onchange="loadImage(event, 'selfie-preview')"><br>
     <img id="selfie-preview" style="max-width: 400px; max-height: 200px;"><br>
 
-    <label for="background">Select new background:</label><br>
-    <input type="file" id="background" name="background" accept="image/*" onchange="loadImage(event, 'background-preview')"><br>
-    <img id="background-preview" style="max-width: 400px; max-height: 200px;"><br>
+    <div class="background-selection">
+        <label for="background">Select new background:</label><br>
+        <input type="file" id="background" name="background" accept="image/*" onchange="loadImage(event, 'background-preview')"><br>
+        <br>
 
-    <label for="bg-color">Or choose a background color:</label><br>
-    <input type="color" id="bg-color" name="bg_color" value="#ffffff"><br>
+        <label for="bg-color">Or choose a background color:</label><br>
+        <input type="color" id="bg-color" name="bg_color" value="#ffffff"><br>
+    </div>
+    <img id="background-preview" style="max-width: 400px; max-height: 200px;">
 
     <label for="resize-option">Choose which to resize:</label><br>
     <select id="resize-option" name="resize_option">

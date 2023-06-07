@@ -42,6 +42,7 @@ form {
 form label {
     display: block;
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 form input[type="file"] {
@@ -64,6 +65,11 @@ form input[type="color"] {
     display: block;
     width: 20%;
     margin-bottom: 20px;
+}
+
+form .background-selection {
+    display: flex;
+    justify-content: flex-start;
 }
 
 select {
