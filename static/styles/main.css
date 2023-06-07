@@ -1,0 +1,15 @@
+nav {
+    background-color: #f8f8f8;
+    padding: 15px;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+nav a.active {
+    font-weight: bold;
+    color: blue;
+}
