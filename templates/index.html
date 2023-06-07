@@ -11,10 +11,12 @@ Home
 
 <form action="/change-background" method="post" enctype="multipart/form-data">
     <label for="selfie">Select selfie:</label><br>
-    <input type="file" id="selfie" name="selfie" accept="image/*"><br>
+    <input type="file" id="selfie" name="selfie" accept="image/*" onchange="loadImage(event, 'selfie-preview')"><br>
+    <img id="selfie-preview" style="max-width: 400px; max-height: 200px;"><br>
 
     <label for="background">Select new background:</label><br>
-    <input type="file" id="background" name="background" accept="image/*"><br>
+    <input type="file" id="background" name="background" accept="image/*" onchange="loadImage(event, 'background-preview')"><br>
+    <img id="background-preview" style="max-width: 400px; max-height: 200px;"><br>
 
     <label for="bg-color">Or choose a background color:</label><br>
     <input type="color" id="bg-color" name="bg_color" value="#ffffff"><br>
