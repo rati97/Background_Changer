@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to Background Changer!</h1>
+
+<p>Select a selfie and a new background to start.</p>
+
+<form action="/change-background" method="post" enctype="multipart/form-data">
+    <label for="selfie">Select selfie:</label><br>
+    <input type="file" id="selfie" name="selfie" accept="image/*"><br>
+
+    <label for="background">Select new background:</label><br>
+    <input type="file" id="background" name="background" accept="image/*"><br>
+
+    <input type="submit" value="Change Background">
+</form>
+{% endblock %}
