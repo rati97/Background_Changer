@@ -1,5 +1,8 @@
 from PIL import Image
-from rembg import remove
+from rembg import remove, new_session
+
+# specify model to use
+session = new_session("u2net_human_seg")
 
 
 def change_background(selfie, background, resize_target="background"):
@@ -28,7 +31,7 @@ def change_background(selfie, background, resize_target="background"):
         raise ValueError("resize_target must be either 'background' or 'selfie'")
 
     # cut person from selfie
-    mask = remove(selfie, only_mask=True)
+    mask = remove(selfie, only_mask=True, session=session)
 
     if resize_target == "background":
         # resize background to match the selfie size
