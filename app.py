@@ -30,6 +30,9 @@ def change_background():
     if data["background"] is not None:
         background_data = base64.b64decode(data["background"].split(",")[1])
         background = Image.open(io.BytesIO(background_data))
+
+        # set resize option to what the user chose
+        resize_option = data["resize_option"]
     else:
         # convert hex to rgb
         bg_color = data["bg_color"]
@@ -40,11 +43,11 @@ def change_background():
         background = Image.new("RGB", (100, 100))
         background.paste(bg_color, (0, 0, background.size[0], background.size[1]))
 
+        # set resize option to "background"
+        resize_option = "background"
+
     # Load the images into PIL
     selfie = Image.open(io.BytesIO(selfie_data))
-
-    # Handle the other form data
-    resize_option = data["resize_option"]
 
     # Change background
     result = cb(selfie, background, resize_option)
