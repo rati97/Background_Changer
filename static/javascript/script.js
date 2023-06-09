@@ -7,6 +7,16 @@ function loadImage(event, previewId) {
     reader.readAsDataURL(event.target.files[0]);
 }
 
+document.getElementById('bg-color').addEventListener('input', function() {
+    // Get the background image input
+    const backgroundImageInput = document.getElementById('background');
+    // Reset the input
+    backgroundImageInput.value = "";
+    // Remove the displayed image
+    const backgroundImageDisplay = document.getElementById('background-preview');
+    backgroundImageDisplay.src = "";
+});
+
 
 document.getElementById('change-background-form').addEventListener('submit', function(event) {
     event.preventDefault();  // Prevent the form from submitting normally
