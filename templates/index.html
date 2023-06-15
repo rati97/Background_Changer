@@ -5,33 +5,37 @@ Home
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to Background Changer!</h1>
+<h1 class="text-center">Welcome to Background Changer!</h1>
 
-<p>Select a selfie and a new background to start.</p>
+<h4 class="text-center">Select a selfie and a new background to start.</h4>
 
-<form id="change-background-form" enctype="multipart/form-data">
-    <label for="selfie">Select selfie:</label><br>
-    <input type="file" id="selfie" name="selfie" accept="image/*" onchange="loadImage(event, 'selfie-preview')"><br>
-    <img id="selfie-preview" style="max-width: 400px; max-height: 200px;"><br>
-
-    <div class="background-selection">
-        <label for="background">Select new background:</label><br>
-        <input type="file" id="background" name="background" accept="image/*" onchange="loadImage(event, 'background-preview')"><br>
-        <br>
-
-        <label for="bg-color">Or choose a background color:</label><br>
-        <input type="color" id="bg-color" name="bg_color" value="#ffffff"><br>
+<form id="change-background-form" class="container" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <label for="selfie" class="form-label">Select selfie:</label><br>
+            <input class="form-control" type="file" id="selfie" name="selfie" accept="image/*" onchange="loadImage(event, 'selfie-preview')"><br>
+            <img  class="img-thumbnail" id="selfie-preview" style="max-width: 400px; max-height: 200px;"><br>
+        </div>
+        <div class="col-12 col-lg-6">
+            <label class="form-label" for="background">Select new background:</label><br>
+            <input class="form-control" type="file" id="background" name="background" accept="image/*" onchange="loadImage(event, 'background-preview')"><br>
+            <br>
+            <label for="bg-color" class="form-label">Or choose a background color:</label><br>
+            <input class="form-control form-control-color" type="color" id="bg-color" name="bg_color" value="#ffffff"><br>
+            <img class="img-thumbnail" id="background-preview" style="max-width: 400px; max-height: 200px;">
+        </div>
     </div>
-    <img id="background-preview" style="max-width: 400px; max-height: 200px;">
 
     <label for="resize-option">Choose which to resize:</label><br>
-    <select id="resize-option" name="resize_option">
+    <select id="resize-option" class="form-select" name="resize_option">
         <option value="background">Background</option>
         <option value="selfie">Selfie</option>
-    </select><br>
+    </select><br/><br/>
 
-    <input type="submit" value="Change Background">
+    <input type="submit" class="btn btn-outline-success btn-lg" id="submit-button" value="Change Background">
+    <br/><br/>
+    <h2 class="text-center">Result:</h2>
     <div class="submit-url" id="{{ url_for('change_background') }}" style="display:none"></div>
-    <img id="result-image" src="" alt="Result image" style="display:none">
+    <img class="img-fluid" id="result-image" src="" alt="Result image" style="display:none">
 </form>
 {% endblock %}
